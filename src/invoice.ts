@@ -1,5 +1,5 @@
 import { axiosMasterMain } from "axios-master";
-import { config, parseErr } from "./";
+import { config, logAxios, parseErr } from "./";
 import { getToken } from "./auth";
 
 type TDBRes<T> = { success: boolean; msg: string; data: T };
@@ -95,7 +95,7 @@ const CREATE = async (
         retryFunction: getToken,
         name: "HAPPYPAY CREATE",
         timeout: 20000,
-        logger() {}
+        logger: logAxios(config.logger, "HAPPYPAY CREATE")
       }
     );
 
@@ -135,7 +135,7 @@ const GET = async (
         retryFunction: getToken,
         name: "HAPPYPAY GET",
         timeout: 20000,
-        logger() {}
+        logger: logAxios(config.logger, "HAPPYPAY GET")
       }
     );
 

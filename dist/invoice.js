@@ -31,7 +31,7 @@ const CREATE = async (body) => {
             retryFunction: auth_1.getToken,
             name: "HAPPYPAY CREATE",
             timeout: 20000,
-            logger() { }
+            logger: (0, _1.logAxios)(_1.config.logger, "HAPPYPAY CREATE")
         });
         if (res.success && ((_c = res.data) === null || _c === void 0 ? void 0 : _c.qrcode)) {
             return { success: true, message: "success", data: res.data };
@@ -59,7 +59,7 @@ const GET = async (invoiceNo) => {
             retryFunction: auth_1.getToken,
             name: "HAPPYPAY GET",
             timeout: 20000,
-            logger() { }
+            logger: (0, _1.logAxios)(_1.config.logger, "HAPPYPAY GET")
         });
         if (res.success && ((_a = res.data) === null || _a === void 0 ? void 0 : _a.invoice)) {
             return { success: true, message: "success", data: res.data.invoice };
