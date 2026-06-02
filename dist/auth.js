@@ -11,7 +11,7 @@ const _1 = require("./");
 const LOGIN = async (body) => {
     var _a;
     try {
-        _1.config.host = _1.host[body.host];
+        _1.config.host = body.host;
         _1.config.username = body.username;
         _1.config.password = body.password;
         _1.config.terminalId = body.terminalId;

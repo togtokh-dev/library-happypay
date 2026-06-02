@@ -54,14 +54,6 @@ export const logAxios =
     );
   };
 
-export const host: {
-  STAGING: "https://qrservice.tdbmlabs.mn";
-  PROD: "https://qrservice.tdb.mn";
-} = {
-  STAGING: "https://qrservice.tdbmlabs.mn",
-  PROD: "https://qrservice.tdb.mn"
-};
-
 export const config: {
   username: string;
   password: string;

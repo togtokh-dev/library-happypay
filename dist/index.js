@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.payment = exports.invoice = exports.deeplink = exports.config = exports.host = exports.logAxios = exports.parseErr = void 0;
+exports.payment = exports.invoice = exports.deeplink = exports.config = exports.logAxios = exports.parseErr = void 0;
 const auth_1 = require("./auth");
 const invoice_1 = require("./invoice");
 const payment_1 = require("./payment");
@@ -46,10 +46,6 @@ const logAxios = (enabled, name) => (data) => {
     }, null, 2));
 };
 exports.logAxios = logAxios;
-exports.host = {
-    STAGING: "https://qrservice.tdbmlabs.mn",
-    PROD: "https://qrservice.tdb.mn"
-};
 exports.config = {
     username: "",
     password: "",

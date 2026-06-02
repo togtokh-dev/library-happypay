@@ -1,10 +1,6 @@
 import { AxiosMasterLoggerType } from "axios-master";
 export declare function parseErr(error: unknown): string;
 export declare const logAxios: (enabled: boolean, name: string) => (data: AxiosMasterLoggerType) => void;
-export declare const host: {
-    STAGING: "https://qrservice.tdbmlabs.mn";
-    PROD: "https://qrservice.tdb.mn";
-};
 export declare const config: {
     username: string;
     password: string;
@@ -20,7 +16,7 @@ export declare const deeplink: (qrcode: string) => string;
 declare const _default: {
     auth: {
         LOGIN: (body: {
-            host: "PROD" | "STAGING";
+            host: string;
             username: string;
             password: string;
             terminalId: string;

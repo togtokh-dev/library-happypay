@@ -1,6 +1,6 @@
 import axios from "axios";
 import { axiosMasterMain } from "axios-master";
-import { config, host, logAxios, parseErr } from "./";
+import { config, logAxios, parseErr } from "./";
 
 type LoginResT = {
   success: boolean;
@@ -13,8 +13,7 @@ type LoginResT = {
  * Бүх дараагийн хүсэлтүүдийн өмнө нэг удаа дуудах шаардлагатай.
  */
 const LOGIN = async (body: {
-  /** "test" = https://qrservice.tdbmlabs.mn, "preprod" = https://preprod-happypay.tdbm.mn */
-  host: "PROD" | "STAGING";
+  host: string;
   /** Банкнаас олгосон нэвтрэх нэр */
   username: string;
   /** Банкнаас олгосон нэвтрэх нууц үг */
@@ -30,7 +29,7 @@ const LOGIN = async (body: {
   message: string;
 }> => {
   try {
-    config.host = host[body.host];
+    config.host = body.host;
     config.username = body.username;
     config.password = body.password;
     config.terminalId = body.terminalId;

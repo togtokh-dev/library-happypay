@@ -2,8 +2,7 @@
 export declare const getToken: () => Promise<string>;
 declare const _default: {
     LOGIN: (body: {
-        /** "test" = https://qrservice.tdbmlabs.mn, "preprod" = https://preprod-happypay.tdbm.mn */
-        host: "PROD" | "STAGING";
+        host: string;
         /** Банкнаас олгосон нэвтрэх нэр */
         username: string;
         /** Банкнаас олгосон нэвтрэх нууц үг */
