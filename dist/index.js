@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.payment = exports.invoice = exports.deeplink = exports.config = exports.logAxios = exports.parseErr = void 0;
+exports.payment = exports.invoice = exports.deeplink = exports.config = exports.logAxios = void 0;
+exports.parseErr = parseErr;
 const auth_1 = require("./auth");
 const invoice_1 = require("./invoice");
 const payment_1 = require("./payment");
@@ -32,7 +33,6 @@ function parseErr(error) {
     }
     return "Unexpected error";
 }
-exports.parseErr = parseErr;
 const logAxios = (enabled, name) => (data) => {
     var _a, _b, _c, _d, _e, _f;
     if (!enabled)

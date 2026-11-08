@@ -7,7 +7,7 @@ type ReverseResDataT = {
 declare const _default: {
     REVERSE: (body: {
         /** Буцаалт хийх нэхэмжлэхийн дугаар */
-        invoiceNo: string | number;
+        invoiceNo: number | string;
         /** Терминал дугаар (config.terminalId-г default болгоно) */
         terminalId?: string;
         /** Буцаалт хийх дүн */

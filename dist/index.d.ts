@@ -29,7 +29,7 @@ declare const _default: {
     invoice: {
         CREATE: (body: {
             qrType: "dynamic" | "static";
-            transactionType: 2 | 1 | 3;
+            transactionType: 1 | 2 | 3;
             amount?: number;
             curCode?: string;
             accountNumber?: string;
@@ -48,29 +48,29 @@ declare const _default: {
             data?: {
                 qrcode: string;
                 qrImage: string;
-                invoiceNo: number;
+                invoiceNo: number | null;
                 deeplink: string;
                 miniAppDeeplinkUrl: string;
                 type: number;
             };
         }>;
-        GET: (invoiceNo: string | number) => Promise<{
+        GET: (invoiceNo: number | string) => Promise<{
             success: boolean;
             message: string;
             data?: {
                 invoiceNo: number;
                 amount: number;
                 curCode: string;
-                paymentId: number;
+                paymentId: number | null;
                 terminalId: string;
-                status: "failed" | "new" | "expired" | "paid" | "cancelled";
-                txnDesc: string;
-                callbackUrl: string;
+                status: "new" | "paid" | "failed" | "cancelled" | "expired";
+                txnDesc: string | null;
+                callbackUrl: string | null;
                 createDate: string;
                 expireDate: string;
-                qr: string;
+                qr: string | null;
                 merchantName: string;
-                paymentType: string;
+                paymentType: string | null;
             };
         }>;
         LIST: (params?: {
@@ -84,41 +84,41 @@ declare const _default: {
                 invoiceNo: number;
                 amount: number;
                 curCode: string;
-                paymentId: number;
+                paymentId: number | null;
                 terminalId: string;
-                status: "failed" | "new" | "expired" | "paid" | "cancelled";
-                txnDesc: string;
-                callbackUrl: string;
+                status: "new" | "paid" | "failed" | "cancelled" | "expired";
+                txnDesc: string | null;
+                callbackUrl: string | null;
                 createDate: string;
                 expireDate: string;
-                qr: string;
+                qr: string | null;
                 merchantName: string;
-                paymentType: string;
+                paymentType: string | null;
             }[];
         }>;
-        CANCEL: (invoiceNo: string | number) => Promise<{
+        CANCEL: (invoiceNo: number | string) => Promise<{
             success: boolean;
             message: string;
             data?: {
                 invoiceNo: number;
                 amount: number;
                 curCode: string;
-                paymentId: number;
+                paymentId: number | null;
                 terminalId: string;
-                status: "failed" | "new" | "expired" | "paid" | "cancelled";
-                txnDesc: string;
-                callbackUrl: string;
+                status: "new" | "paid" | "failed" | "cancelled" | "expired";
+                txnDesc: string | null;
+                callbackUrl: string | null;
                 createDate: string;
                 expireDate: string;
-                qr: string;
+                qr: string | null;
                 merchantName: string;
-                paymentType: string;
+                paymentType: string | null;
             };
         }>;
     };
     payment: {
         REVERSE: (body: {
-            invoiceNo: string | number;
+            invoiceNo: number | string;
             terminalId?: string;
             amount: number;
         }) => Promise<{
@@ -128,7 +128,7 @@ declare const _default: {
                 type: number;
                 qrcode: string;
                 qrImage: string;
-                invoiceNo: number;
+                invoiceNo: number | null;
             };
         }>;
     };

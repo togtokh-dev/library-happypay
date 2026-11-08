@@ -56,7 +56,7 @@ declare const _default: {
         /** qrcode (raw), qrImage (base64), invoiceNo агуулсан объект */
         data?: CreateResDataT;
     }>;
-    GET: (invoiceNo: string | number) => Promise<{
+    GET: (invoiceNo: number | string) => Promise<{
         /** Хүсэлт амжилттай эсэх */
         success: boolean;
         /** Алдааны мэдэгдэл эсвэл "success" */
@@ -78,7 +78,7 @@ declare const _default: {
         /** Нэхэмжлэхийн массив */
         data?: InvoiceT[];
     }>;
-    CANCEL: (invoiceNo: string | number) => Promise<{
+    CANCEL: (invoiceNo: number | string) => Promise<{
         /** Хүсэлт амжилттай эсэх */
         success: boolean;
         /** Алдааны мэдэгдэл эсвэл "success" */
